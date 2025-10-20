@@ -1,0 +1,18 @@
+.products-page {
+  width: 100%;
+  padding: 2rem 0;
+  background: #f8f9fa;
+}
+
+.products-page h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.products-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+}

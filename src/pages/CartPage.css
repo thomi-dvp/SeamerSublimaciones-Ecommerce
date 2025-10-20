@@ -1,0 +1,203 @@
+.cart-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2.5rem 1rem;
+}
+
+.cart-title {
+  text-align: center;
+  margin-bottom: 36px;
+  color: #1a237e;
+  font-weight: 800;
+  letter-spacing: .01em;
+}
+
+.cart-empty {
+  text-align: center;
+  color: #888;
+  font-size: 20px;
+  margin-top: 60px;
+}
+
+.cart-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.cart-items-list {
+  flex: 1;
+  min-width: 320px;
+  max-width: 520px;
+}
+
+.cart-item-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, #f8fafc 60%, #e3e9f7 100%);
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  padding: 1.1rem 1.2rem;
+  margin-bottom: 18px;
+  border: 1.5px solid #e0e7ef;
+  gap: 1rem;
+  transition: box-shadow 0.18s, border 0.18s, transform 0.15s;
+}
+
+.cart-item-card:hover {
+  box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+  border: 1.5px solid #b3b8c5;
+  transform: translateY(-2px) scale(1.012);
+}
+
+.cart-item-info {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.cart-item-img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1.5px solid #e0e7ef;
+  background: #f4f6fb;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+}
+
+.cart-item-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-item-name {
+  font-weight: 700;
+  font-size: 18px;
+  color: #1a237e;
+  margin-bottom: 2px;
+}
+
+.cart-item-desc {
+  color: #4b5563;
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+.cart-item-price {
+  color: #007bff;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.cart-item-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cart-btn {
+  padding: 0.3rem 0.9rem;
+  font-size: 20px;
+  border-radius: 6px;
+  border: 1.5px solid #e0e7ef;
+  background: #f3f4f6;
+  cursor: pointer;
+  font-weight: 700;
+  color: #1a237e;
+  transition: background 0.18s, border 0.18s, color 0.18s;
+}
+
+.cart-btn:hover {
+  background: #e3e9f7;
+  border: 1.5px solid #007bff;
+  color: #007bff;
+}
+
+.cart-btn-remove {
+  margin-left: 14px;
+  color: #fff;
+  background: linear-gradient(90deg, #e53935 60%, #b71c1c 100%);
+  border: none;
+  border-radius: 6px;
+  padding: 0.4rem 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 15px;
+  box-shadow: 0 2px 8px rgba(229,57,53,0.10);
+  transition: background 0.18s, box-shadow 0.18s, transform 0.13s;
+}
+
+.cart-btn-remove:hover {
+  background: linear-gradient(90deg, #b71c1c 60%, #e53935 100%);
+  box-shadow: 0 4px 16px rgba(229,57,53,0.18);
+  transform: translateY(-1px) scale(1.04);
+}
+
+.cart-summary {
+  min-width: 280px;
+  max-width: 340px;
+  flex: 1;
+  background: linear-gradient(135deg, #e3e9f7 60%, #f8fafc 100%);
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  padding: 2.2rem 1.5rem 1.5rem 1.5rem;
+  margin-left: auto;
+  border: 1.5px solid #e0e7ef;
+  transition: box-shadow 0.18s, border 0.18s, transform 0.15s;
+}
+
+.cart-summary:hover {
+  box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+  border: 1.5px solid #b3b8c5;
+  transform: translateY(-2px) scale(1.012);
+}
+
+.cart-summary-title {
+  font-size: 22px;
+  margin-bottom: 18px;
+  color: #1a237e;
+  font-weight: 800;
+  text-align: center;
+  letter-spacing: .01em;
+}
+
+.cart-summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.cart-summary-total {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 800;
+  font-size: 20px;
+  margin-top: 18px;
+  color: #007bff;
+}
+
+.cart-btn-clear {
+  margin-top: 30px;
+  width: 100%;
+  background: linear-gradient(90deg, #e53935 60%, #b71c1c 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.9rem 0;
+  font-weight: 700;
+  font-size: 17px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(229,57,53,0.10);
+  transition: background 0.18s, box-shadow 0.18s, transform 0.13s;
+}
+
+.cart-btn-clear:hover {
+  background: linear-gradient(90deg, #b71c1c 60%, #e53935 100%);
+  box-shadow: 0 4px 16px rgba(229,57,53,0.18);
+  transform: translateY(-1px) scale(1.04);
+}

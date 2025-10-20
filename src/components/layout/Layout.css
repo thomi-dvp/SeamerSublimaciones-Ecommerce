@@ -1,0 +1,23 @@
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.main-content {
+  width: 100vw;
+  margin: 0;
+  padding: 6rem 0 2rem;
+  flex-grow: 1;
+  min-height: calc(100vh - 200px); /* Ajusta este valor según el alto del footer */
+}
+
+.main-content > * {
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
