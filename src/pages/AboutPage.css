@@ -2,15 +2,15 @@
   max-width: 800px;
   margin: 0 auto;
   padding: 3rem 1.5rem 2.5rem 1.5rem;
-  background: linear-gradient(135deg, #f8fafc 60%, #e3e9f7 100%);
+  background: linear-gradient(135deg, rgba(248,250,252,0.02) 60%, rgba(227,233,247,0.00) 100%);
   border-radius: 18px;
   box-shadow: 0 4px 24px 0 rgba(0,0,0,0.08);
-  border: 1.5px solid #e0e7ef;
+  border: 1.5px solid var(--card-border);
 }
 
 .about-title {
   text-align: center;
-  color: #1a237e;
+  color: var(--abbey);
   font-size: 2.2rem;
   font-weight: 800;
   margin-bottom: 1.5rem;
@@ -19,7 +19,7 @@
 
 .about-content {
   font-size: 1.15rem;
-  color: #333;
+  color: var(--ebony);
   line-height: 1.7;
   margin-bottom: 2rem;
   text-align: center;
@@ -30,7 +30,7 @@
 }
 
 .about-section-title {
-  color: #007bff;
+  color: var(--abbey);
   font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 0.7rem;

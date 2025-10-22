@@ -1,11 +1,39 @@
 :root {
+  /* Typography */
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
+  /* Color palette mapped from Palette.txt */
+  /* base palette (lightened for brighter UI) */
+  --abbey: #6b6e70;      /* slightly lighter desaturated gray */
+  --porcelain: #fbfcfd;  /* very light off-white */
+  --ebony: #0f1720;      /* softened near-black */
+  --heather: #d1d6de;    /* lighter cool gray */
+  --gray-chateau: #aab0b6;/* lighter muted gray */
+  --rolling-stone: #8b9094;/* softer mid gray */
+  --cape-cod: #4b5154;    /* lighter deep gray for surfaces */
+  --geyser: #e6ebf2;      /* pale blue-gray */
+  --shark: #2a2c2e;      /* softened page background (not pure black) */
+
+  /* Site tokens mapped to the palette */
+  /* site tokens mapped to the lightened palette */
+  --bg: #f7f9fb; /* overall page background: a light, airy base */
+  --surface: var(--porcelain); /* cards and surfaces use very light surface */
+  --muted: var(--rolling-stone); /* secondary text */
+  --text: #111217; /* main text: dark but not pure black for readability */
+  --accent-500: #4f6369; /* adjusted primary accent (muted teal-gray feel) */
+  --accent-400: #6f7b80; /* lighter accent */
+  --accent-600: var(--ebony); /* stronger accents for emphasis */
+  --glass: rgba(15,20,28,0.04);
+  --card-border: rgba(16,22,28,0.06);
+  /* Danger / remove actions */
+  --danger-500: #e53935;
+  --danger-600: #b71c1c;
+
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: var(--text);
+  background-color: var(--bg);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -15,11 +43,11 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: var(--accent-500);
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: var(--accent-400);
 }
 
 body {
@@ -42,12 +70,12 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: var(--surface);
   cursor: pointer;
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: var(--accent-500);
 }
 button:focus,
 button:focus-visible {
@@ -56,13 +84,20 @@ button:focus-visible {
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    /* Light theme overrides */
+    --bg: var(--porcelain);
+    --surface: var(--porcelain);
+    --muted: var(--rolling-stone);
+    --text: var(--ebony);
+    --glass: rgba(5,8,16,0.04);
+    --card-border: rgba(26,26,29,0.06);
+    --danger-500: #e53935;
+    --danger-600: #b71c1c;
   }
   a:hover {
-    color: #747bff;
+    color: var(--accent-400);
   }
   button {
-    background-color: #f9f9f9;
+    background-color: var(--porcelain);
   }
 }

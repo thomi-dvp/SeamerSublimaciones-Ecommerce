@@ -4,6 +4,9 @@ import './HomePage.css'
 import ProductComponent from '../components/ProductComponent'
 import { useCart } from '../context/CartContext'
 import BackgroundCarousel from '../components/BackgroundCarousel'
+import Categories from '../components/Categories'
+import OrderProcess from '../components/OrderProcess'
+import Testimonials from '../components/Testimonials'
 
 // SVG icons for features
 const QualityIcon = () => (
@@ -58,7 +61,7 @@ const HomePage = () => {
         <div className="hero-container">
           <div className="hero-content">
             <h1 className="hero-title">
-              <span className="highlight">Dale vida</span> a tus ideas con productos sublimados
+              Dale vida a tus ideas con productos sublimados
             </h1>
             <p className="hero-sub">Regalos únicos, merchandising para tu marca y recuerdos personalizados con la mejor calidad.</p>
             <div className="hero-cta">
@@ -117,6 +120,31 @@ const HomePage = () => {
           ))}
         </div>
       </section>
+
+      <section className="featured-products">
+        <div className="section-header">
+          <h2>Productos destacados</h2>
+          <Link to="/productos" className="view-all">Ver todas las categorías de productos</Link>
+        </div>
+        <Categories />
+      </section>
+      
+      <section className="featured-products">
+        <div className="section-header">
+          <h2>Cómo realizar un pedido?</h2>
+          <Link to="/productos" className="view-all">A continuación te mostramos los pasos</Link>
+        </div>
+        <OrderProcess />
+      </section>
+
+      <section className="featured-products">
+        <div className="section-header">
+          <h2>Qué dicen nuestros clientes?</h2>
+          <Link to="/productos" className="view-all">Experiencias reales con nuestros productos</Link>
+        </div>
+          <Testimonials />
+      </section>
+      
     </div>
   )
 }

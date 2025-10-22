@@ -1,0 +1,32 @@
+/* CSS HEX */
+--abbey: #54575a;
+--porcelain: #f6f8f9;
+--ebony: #050810;
+--heather: #bcc2ce;
+--gray-chateau: #9ea2a7;
+--rolling-stone: #747b7f;
+--cape-cod: #3a3f42;
+--geyser: #d5dae5;
+--shark: #1a1a1d;
+
+/* SCSS HEX */
+$abbey: #54575a;
+$porcelain: #f6f8f9;
+$ebony: #050810;
+$heather: #bcc2ce;
+$gray-chateau: #9ea2a7;
+$rolling-stone: #747b7f;
+$cape-cod: #3a3f42;
+$geyser: #d5dae5;
+$shark: #1a1a1d;
+
+/* SCSS RGB */
+$abbey: rgba(84,87,90,1);
+$porcelain: rgba(246,248,249,1);
+$ebony: rgba(5,8,16,1);
+$heather: rgba(188,194,206,1);
+$gray-chateau: rgba(158,162,167,1);
+$rolling-stone: rgba(116,123,127,1);
+$cape-cod: rgba(58,63,66,1);
+$geyser: rgba(213,218,229,1);
+$shark: rgba(26,26,29,1);
