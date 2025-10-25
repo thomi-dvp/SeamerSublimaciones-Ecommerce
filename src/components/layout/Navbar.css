@@ -63,68 +63,74 @@
   align-items: center;
   justify-content: center;
   padding: 0.625rem;
-  border-radius: 8px;
-  background: linear-gradient(135deg, rgba(247,249,251,0.9) 0%, rgba(247,249,251,0.6) 100%);
-  transition: all 0.2s ease;
+  border-radius: 8px; /* Este borde se aplica a los links normales */
+  text-decoration: none;
+  position: relative;
+  transition: color 0.2s ease;
 }
 
 .nav-link:hover {
-  background: rgba(0,0,0,0.05);
-  transform: translateY(-2px);
+  text-decoration: none;
+  color: #333;
+  position: relative;
 }
 
-.nav-link:focus-visible {
-  outline: 2px solid rgba(100, 100, 255, 0.18);
-  outline-offset: 2px;
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 50%;
+  background-color: #007bff;
+  transform: translateX(-50%);
+  transition: all 0.3s ease;
 }
 
-.nav-link--cart {
+.nav-link:hover::after {
+  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.user-icon,
+.cart-icon {
+  position: relative; /* Necesario para posicionar el contador */
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0.625rem;
-  border-radius: 50%;
-  background: linear-gradient(135deg, rgba(247,249,251,0.9) 0%, rgba(247,249,251,0.6) 100%);
-  transition: all 0.2s ease;
+  border-radius: 50%; /* Borde circular para los íconos */
+  background: none; /* Quitamos fondo por defecto de los botones */
+  border: none; /* Quitamos borde por defecto de los botones */
+  transition: all 1.2s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.nav-link--cart:hover {
-  background: rgba(0,0,0,0.05);
-  transform: translateY(-2px);
+.user-icon:hover,
+.cart-icon:hover {
+  transform: translateY(-3px) rotateY(360deg);
 }
 
-.nav-link--cart svg {
+.user-icon svg,
+.cart-icon svg {
   display: block;
   color: var(--ebony);
 }
 
-@media (max-width: 768px) {
-  .navbar-container {
-    flex-direction: column;
-    gap: 0.5rem;
-    padding: 0.5rem 0.75rem;
-  }
-
-  .navbar-menu-container {
-    width: 100%;
-    flex-direction: column;
-    gap: 1rem;
-    margin-left: 0;
-  }
-
-  .navbar-menu {
-    width: 100%;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.5rem;
-  }
-
-  .nav-link {
-    padding: 0.5rem 0.75rem;
-    width: auto;
-  }
-
-  .navbar-logo-img {
-    height: 48px;
-  }
+.cart-counter {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: var(--danger-500);
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border: 2px solid var(--porcelain); /* Borde para que se destaque del fondo */
+  transform: translate(25%, -25%);
 }

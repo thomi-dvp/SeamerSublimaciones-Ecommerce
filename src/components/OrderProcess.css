@@ -1,6 +1,9 @@
 .order-process {
-  padding: 4rem 1rem;
-  background: white;
+  background: transparent;
+  /* Centramos el contenido dentro de la sección de ancho completo */
+  padding: 0 1rem; /* Quitamos el padding vertical para que lo maneje el wrapper */
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .order-process .section-header {
@@ -30,7 +33,7 @@
 .process-step {
   text-align: center;
   padding: 2rem;
-  background: white;
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -39,7 +42,7 @@
 
 .process-step:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
 .step-icon {
@@ -49,35 +52,43 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: white;
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
-  color: var(--primary);
+  color: white;
 }
 
 .process-step h3 {
   font-size: 1.25rem;
-  color: var(--ebony);
+  color: white;
   margin-bottom: 1rem;
 }
 
 .process-step p {
-  color: var(--rolling-stone);
+  color: rgba(255, 255, 255, 0.8);
   font-size: 0.875rem;
   line-height: 1.5;
 }
 
+/* Contenedor para la información adicional */
+.additional-info-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
 .delivery-info {
-  max-width: 1200px;
-  margin: 0 auto 4rem;
+  /* Quitamos márgenes y max-width para que se ajuste al grid */
+  margin: 0;
   padding: 2rem;
-  background: var(--alabaster);
   border-radius: 12px;
+  background: transparent; /* Quitamos el fondo para que no se duplique */
 }
 
 .delivery-info h3 {
   text-align: center;
   font-size: 1.5rem;
-  color: var(--ebony);
+  color: white;
   margin-bottom: 2rem;
 }
 
@@ -89,38 +100,48 @@
 
 .info-card {
   padding: 1.5rem;
-  background: white;
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   overflow: hidden;
 }
 
+.info-card-icon {
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+}
+
+.info-card-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
 .info-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
 .info-card h4 {
   font-size: 1.125rem;
-  color: var(--ebony);
+  color: white;
   margin-bottom: 0.5rem;
 }
 
 .info-card p {
-  color: var(--rolling-stone);
+  color: rgba(255, 255, 255, 0.8);
   font-size: 0.875rem;
 }
 
 .customization-options {
-  max-width: 1200px;
-  margin: 0 auto;
+  /* Quitamos márgenes y max-width para que se ajuste al grid */
+  margin: 0;
   text-align: center;
 }
 
 .customization-options h3 {
   font-size: 1.5rem;
-  color: var(--ebony);
+  color: white;
   margin-bottom: 2rem;
 }
 
@@ -133,19 +154,27 @@
 }
 
 .options-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
   padding: 1rem;
-  background: white;
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
-  color: var(--rolling-stone);
+  color: rgba(255, 255, 255, 0.9);
   font-size: 0.875rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   overflow: hidden;
 }
 
+.options-list li svg {
+  flex-shrink: 0;
+  color: var(--accent-color);
+}
+
 .options-list li:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
 @media (max-width: 768px) {

@@ -252,29 +252,33 @@
   width: 72%;
   height: 72%;
   border-radius: 10px;
-    background: linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.00));
-    box-shadow: 0 8px 30px rgba(0,0,0,0.25);
-  }
+  background: linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.00));
+  box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+}
+
 .features {
   margin: 3rem auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
   max-width: 1200px;
 }
 
 .feature {
   background: var(--surface);
-  border-radius: 16px;
+  border-radius: 8px;
   padding: 1.5rem;
   border: 1px solid var(--card-border);
   box-shadow: 0 8px 20px rgba(15,23,42,0.04);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center
   }
 
 .feature:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 28px rgba(15,23,42,0.08);
 }
 
 .feature-icon {
@@ -302,6 +306,7 @@
 .featured-products { 
   margin: 4rem auto;
   max-width: 1200px;
+  position: relative; /* Necesario para posicionar las flechas */
 }
 
 .section-header {
@@ -331,12 +336,65 @@
   color: var(--accent-600);
 }
 
-.featured-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+/* Estilos para el carrusel de productos con Swiper */
+.products-carousel {
+  width: 100%;
+  padding: 1rem 0rem 8rem; /* Espacio para la paginación */
 }
 
+.products-carousel .swiper-slide {
+  display: flex;
+  justify-content: center;
+  background-position: center;
+  background-size: cover;
+  width: 400px; /* Ancho fijo para cada slide */
+  height: 500px; /* Altura fija para cada slide */
+}
+
+/* Estilos para los botones de navegación (flechas) */
+.products-carousel .swiper-button-next,
+.products-carousel .swiper-button-prev {
+  color: var(--accent-500); /* Color del ícono de la flecha */
+  background-color: rgba(255, 255, 255, 0.7); /* Fondo blanco semi-transparente */
+  backdrop-filter: blur(4px); /* Efecto de desenfoque para un look "glass" */
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: flex !important; /* Aseguramos que las flechas sean visibles */
+  transition: all 0.3s ease;
+}
+
+.products-carousel .swiper-button-next:hover,
+.products-carousel .swiper-button-prev:hover {
+  background-color: var(--accent-500); /* Fondo sólido con el color de acento */
+  color: white; /* Flecha blanca */
+  transform: scale(1.1); /* Efecto de crecimiento sutil */
+  box-shadow: 0 6px 16px rgba(37,99,235,0.2);
+}
+
+.products-carousel .swiper-button-next::after,
+.products-carousel .swiper-button-prev::after {
+  font-size: 0.8rem; /* Hacemos la flecha un poco más fina */
+  font-weight: 600;
+}
+
+/* Posicionamos las flechas fuera del carrusel */
+.products-carousel .swiper-button-prev {
+  left: 10px; /* Ajusta este valor para mover la flecha izquierda */
+}
+
+.products-carousel .swiper-button-next {
+  right: 10px; /* Ajusta este valor para mover la flecha derecha */
+}
+
+.products-carousel .swiper-slide-active .product-card {
+  transform: scale(1.10);
+  border-color: var(--accent-200);  
+  box-shadow: 0 12px 30px rgba(37,99,235,0.1);
+}
+
+/* Estilos para la paginación (puntos) */
 .featured-card {
   background: var(--surface);
   border-radius: 16px;
@@ -355,7 +413,7 @@
 
 .fp-thumb { 
   height: 220px;
-    background: linear-gradient(135deg, rgba(255,255,255,0.02) 0%, transparent 100%);
+  background: linear-gradient(135deg, rgba(255,255,255,0.02) 0%, transparent 100%);
   border-bottom: 1px solid var(--card-border);
   position: relative;
   overflow: hidden;
@@ -364,7 +422,7 @@
 .fp-thumb-overlay {
   position: absolute;
   inset: 0;
-    background: rgba(37,99,235,0.08);
+  background: rgba(37,99,235,0.08);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -437,4 +495,31 @@
 @media (max-width: 520px) {
   .hero-title { font-size: 1.6rem; }
   .hero-image { height: 220px; }
+}
+
+/* Estilos para la sección de Proceso de Pedido */
+.order-process-wrapper {
+  background-color: #3c5ba4;
+  padding: 4rem 1rem; /* Ajustamos el padding horizontal al del contenedor padre */
+  border-radius: 0; /* Quitamos el borde redondeado para que sea un bloque completo */
+  /* Hacemos que la sección ocupe todo el ancho */
+  margin: 4rem -1rem; 
+}
+
+.order-process-wrapper .section-header {
+  flex-direction: column;
+  text-align: center;
+  gap: 0.5rem;
+}
+
+.order-process-wrapper .section-header h2 {
+  color: white;
+}
+
+.order-process-wrapper .section-header .view-all {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.order-process-wrapper .section-header .view-all:hover {
+  color: white;
 }

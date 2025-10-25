@@ -2,14 +2,12 @@
 
 .product-card {
   background: linear-gradient(135deg, rgba(246,248,249,0.02) 60%, rgba(227,233,247,0.00) 100%);
-  border-radius: 18px;
-  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.10);
+  border-radius: 8px;
   padding: 1.7rem 1.3rem 1.3rem 1.3rem;
   margin: 1.2rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  transition: box-shadow 0.25s, transform 0.18s;
+  height: 100%; /* Hacemos que la tarjeta ocupe todo el alto del slide */
   width: 100%;
   max-width: 340px;
   border: 1.5px solid var(--card-border);
@@ -18,8 +16,8 @@
 }
 
 .product-card:hover {
-  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.18);
-  transform: translateY(-4px) scale(1.025);
+  box-shadow: 0 0px 16px 0 rgba(0,0,0,0.18);
+  transform: translateY(0px) scale(1.025);
 }
 
 
@@ -48,14 +46,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex-grow: 1; /* Permite que esta sección crezca para ocupar el espacio sobrante */
   font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
   text-align: center;
 }
 
 
 .product-name {
-  font-size: 1.25rem;
-  font-weight: 700;
+  font-size: 1.1rem;
+  font-weight: 600;
   margin-bottom: 0.4rem;
   color: var(--abbey);
   letter-spacing: 0.01em;
@@ -66,7 +65,7 @@
 
 
 .product-description {
-  font-size: 1.01rem;
+  font-size: 0.9rem;
   color: var(--rolling-stone);
   margin-bottom: 1.1rem;
   min-height: 48px;
@@ -74,8 +73,9 @@
 }
 
 
+
 .product-price {
-  font-size: 1.13rem;
+  font-size: 1rem;
   font-weight: bold;
   color: var(--abbey);
   margin-bottom: 1.1rem;
@@ -85,22 +85,26 @@
 
 
 .add-to-cart-btn {
-  background: linear-gradient(90deg, var(--abbey) 60%, var(--cape-cod) 100%);
+  /* Preparamos el fondo para la animación de relleno */
+  background: linear-gradient(to right, var(--cape-cod) 50%, #3c5ba4 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
   color: var(--text);
   border: none;
   border-radius: 8px;
-  padding: 0.6rem 1.4rem;
-  font-size: 1.04rem;
+  padding: 0.5rem 1.2rem;
+  font-size: 0.95rem;
   font-weight: 600;
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-  transition: background 0.18s, box-shadow 0.18s, transform 0.13s;
+  transition: background-position 0.3s ease-out, box-shadow 0.18s, transform 0.13s;
   margin-top: 0.2rem;
   letter-spacing: 0.01em;
   align-self: center;
 }
 
 .add-to-cart-btn:hover {
-  background: linear-gradient(90deg, var(--cape-cod) 60%, var(--abbey) 100%);
+  /* Al hacer hover, movemos la posición del fondo para revelar el nuevo color */
+  background-position: left bottom;
   box-shadow: 0 4px 16px rgba(0,0,0,0.13);
 }

@@ -11,8 +11,7 @@
   width: 100vw;
   margin: 0;
   padding: 6rem 0 2rem;
-  flex-grow: 1;
-  min-height: calc(100vh - 200px); /* Ajusta este valor según el alto del footer */
+  flex: 1 0 auto; /* Hace que el contenido principal ocupe el espacio disponible */
 }
 
 .main-content > * {
