@@ -1,16 +1,93 @@
-# React + Vite
+# SEAMER Sublimaciones — Tienda Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Repositorio frontend de la tienda "SEAMER Sublimaciones", construido con React y Vite.
 
-Currently, two official plugins are available:
+## Descripción
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Interfaz de e-commerce para mostrar productos, gestionar el carrito y completar el proceso de pedido. Está organizada por componentes reutilizables, páginas y un contexto para el carrito.
 
-## React Compiler
+## Tecnologías
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React (JSX)
+- Vite
+- CSS por componente
+- Context API (CartContext)
 
-## Expanding the ESLint configuration
+## Características
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Listado de productos con componentes reutilizables
+- Gestión de carrito mediante `CartContext.jsx`
+- Páginas: Home, Productos, Carrito, About, FAQs
+- Componentes de layout: `Navbar`, `Footer`, y modales de autenticación
+
+## Estructura principal
+
+- `src/` — código fuente
+	- `components/` — componentes UI (incluye `auth/` y `layout/`)
+	- `context/CartContext.jsx` — estado del carrito
+	- `pages/` — vistas (HomePage, ProductsPage, CartPage, AboutPage, FaqsPage)
+	- `main.jsx`, `App.jsx` — entrada y montaje de la app
+
+## Requisitos
+
+- Node.js >= 14 (LTS recomendado)
+- npm o yarn
+
+## Instalación
+
+1. Clonar el repositorio
+
+```bash
+git clone <repo-url>
+cd seamersublimaciones-commerce
+```
+
+2. Instalar dependencias
+
+Con npm:
+
+```bash
+npm install
+```
+
+Con yarn:
+
+```bash
+yarn install
+```
+
+## Comandos útiles
+
+- Desarrollo (Vite):
+
+```bash
+npm run dev
+# o
+yarn dev
+```
+
+- Construir para producción:
+
+```bash
+npm run build
+# o
+yarn build
+```
+
+- Previsualizar build:
+
+```bash
+npm run preview
+# o
+yarn preview
+```
+
+Estos comandos asumen los scripts estándar de Vite en `package.json`.
+
+## Notas para desarrolladores
+
+- Los estilos están junto a los componentes (`*.css`).
+- `CartContext.jsx` centraliza la lógica del carrito; puede extenderse con persistencia en `localStorage` o llamadas a un backend.
+- Revisar `src/components/auth/` para la lógica de login/registro.
+
+
